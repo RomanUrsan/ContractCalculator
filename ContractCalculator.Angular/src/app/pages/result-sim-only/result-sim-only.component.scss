@@ -1,0 +1,22 @@
+.buttonContainer{
+  display: block;
+  justify-content: left;
+  width: 100%;
+  margin-bottom: 200px;
+  margin-left: 20px;
+  margin-right: 20px;
+
+  mat-form-field{
+    min-width: 300px;
+  }
+  .mat-button {
+    background-color: whitesmoke;
+    min-width: 300px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .alert{
+    color: red;
+  }
+}
+

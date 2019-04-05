@@ -1,0 +1,9 @@
+<ng-container [ngSwitch]="currentPage">
+  <app-current-contract *ngSwitchCase="pages.currentContract"></app-current-contract>
+  <app-data-usage *ngSwitchCase="pages.dataUsage"></app-data-usage>
+  <app-capture-contact *ngSwitchCase="pages.confirm"></app-capture-contact>
+  <app-contract-provider *ngSwitchCase="pages.provider"></app-contract-provider>
+  <app-device *ngSwitchCase="pages.device"></app-device>
+  <app-result-sim-only *ngSwitchCase="pages.result"></app-result-sim-only>
+  <app-landing-page *ngSwitchDefault></app-landing-page>
+</ng-container>

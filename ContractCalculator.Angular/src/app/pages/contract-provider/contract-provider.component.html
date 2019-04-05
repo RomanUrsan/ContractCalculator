@@ -1,0 +1,9 @@
+<h1 class="page-title">A bit more about your current contract</h1>
+<form (submit)="onSubmit()" class="flex-form">
+  <mat-button-toggle-group name="Select Network" aria-label="Select Network">
+    <mat-button-toggle *ngFor="let provider of providers">{{provider}}</mat-button-toggle>
+  </mat-button-toggle-group>
+  <div class="submit-button-container">
+    <button mat-button type="submit" class="continue-button">Continue</button>
+  </div>
+</form>

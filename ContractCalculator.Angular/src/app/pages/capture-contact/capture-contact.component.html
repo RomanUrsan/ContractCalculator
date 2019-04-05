@@ -1,0 +1,28 @@
+<h1>Would you like us to send over details of your total saving for future reference?</h1>
+<form [formGroup]="contactForm" (submit)="onSubmit()" class="flex-form" >
+  <div class="buttonContainer">
+    <mat-form-field>
+      <input matInput type="email" placeholder="Your email" formControlName="email" email>
+      <mat-error 
+        *ngIf="contactForm.get('email').hasError('email')">
+        Wrong email </mat-error>
+        <mat-error 
+        *ngIf="contactForm.get('email').hasError('required')">
+        Required </mat-error>
+    </mat-form-field>
+    
+    <div>
+        <button mat-button type="submit" name="noThanks" (click)="onSubmit(false)">No thanks!</button>
+    </div>
+    <label>
+      <input type="checkbox" formControlName="toSubscribe" />
+      <i>
+        Tick if you're happy for us to keep updated on any
+        new deals that you may save you even more?
+      </i> 
+    </label>
+  </div>
+  <div class="submit-button-container">
+    <button mat-button type="submit" name="yesPlease" (click)="onSubmit(true)" class="continue-button">Continue</button>
+  </div>
+</form>

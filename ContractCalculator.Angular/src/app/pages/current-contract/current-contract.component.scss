@@ -1,0 +1,30 @@
+.section {
+  min-width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  h4 {
+    width: 100%;
+    padding-left: 30px;
+  }
+  &.calculated {
+    background-color: whitesmoke;
+    width: 100%;
+    justify-content: center;
+    padding-top: 20px;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    h4,
+    .calculated-number {
+      width: calc(50% - 15px);
+      text-align: center;
+      max-width: 350px;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    .calculated-number {
+      font-size: 50px;
+    }
+  }
+}

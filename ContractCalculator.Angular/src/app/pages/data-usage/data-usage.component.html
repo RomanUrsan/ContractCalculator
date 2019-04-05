@@ -1,0 +1,12 @@
+<h2 class="page-title">People often buy more data than they need</h2>
+<h4>Tell us about what you mainly use your phone for and we can recommend a data package to suit you.</h4>
+<form (submit)="onSubmit()">
+  <div class="content">
+    <mat-button-toggle-group name="Data package" aria-label="Data package" #group="matButtonToggleGroup" value={{selectedValue}} (change)="onValueChange(group.value)">
+      <mat-button-toggle  *ngFor="let dataPackage of dataPackages" value={{dataPackage}}>{{dataPackage | mobileData}}</mat-button-toggle>
+    </mat-button-toggle-group>
+    <div class="submit-button-container">
+      <button mat-button type="submit">Continue</button>
+    </div>
+  </div>
+</form>

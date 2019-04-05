@@ -1,0 +1,21 @@
+.flex-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .submit-button-container {
+    height: 100px;
+    background: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    .continue-button {
+      background-color: rgba(22, 155, 213, 1);
+      min-width: 200px;
+      height: 40px;
+    }
+  }
+}
+.page-title {
+  text-align: center;
+}

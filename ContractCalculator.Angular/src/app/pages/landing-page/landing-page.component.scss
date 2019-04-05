@@ -1,0 +1,23 @@
+.content {
+  height: 100%;
+  user-select: none;
+  .mat-card {
+    
+    height: calc((100vh - 115px) / 3);
+    display: flex;
+    &:hover{
+      cursor: pointer;
+      background-color: whitesmoke;
+    }
+    .card-bottom {
+      align-self: flex-end;
+    }
+  }
+  @media (min-width: 700px) {
+    display: flex;
+    .mat-card {
+      height: calc(100vh - 50px);
+      width: calc(100% / 3);
+    }
+  }
+}

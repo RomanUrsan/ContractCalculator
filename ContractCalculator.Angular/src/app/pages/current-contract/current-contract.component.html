@@ -1,0 +1,52 @@
+<h1 class="page-title">Tell us
+  {{currentMode === mods.phoneAndContract ? "what you've been offered as part of your upgrade" : "about your current contract"}}
+</h1>
+<form class="flex-form" (submit)="onSubmit()">
+  <div class="section">
+    <h4>Monthly Cost</h4>
+    <mat-button-toggle-group name="Monthly Cost" aria-label="Monthly Cost">
+      <mat-button-toggle *ngFor="let cost of monthlyCosts">up to £{{cost}}</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  <div class="section">
+    <div class="input-and-button">
+      <h4>{{currentMode === mods.phoneAndContract ? "Is": "Was"}} there an upfront cost?</h4>
+      <mat-form-field>
+        <input matInput type="number" min=0 autocomplete="off">
+      </mat-form-field>
+      <button mat-button type="button">No</button>
+    </div>
+    <div class="input-and-button" *ngIf="currentMode === mods.onlyContract">
+      <h4>Upgrade date</h4>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date" readonly (click)="picker.open()"
+          autocomplete="off">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <span>or</span>
+      <button mat-button type="button">Out of contract</button>
+    </div>
+  </div>
+  <div *ngIf="currentMode !== mods.onlyContract" class="section">
+    <h4>Contract Duration</h4>
+    <mat-button-toggle-group name="Contract Duration" aria-label="Contract Duration">
+      <mat-button-toggle *ngFor="let duration of contactDurations">{{duration}} Months</mat-button-toggle>
+      <mat-button-toggle>Out of contract</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <div *ngIf="currentMode === mods.phoneAndContract" class="section">
+    <h4>Select Network</h4>
+    <mat-button-toggle-group name="Select Network" aria-label="Select Network">
+      <mat-button-toggle *ngFor="let provider of providers">{{provider}}</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  <div *ngIf="currentMode !== mods.onlyPhone" class="section calculated">
+    <h4>We've calculated the total cost of your contract as</h4>
+    <p class="calculated-number">£1,084</p>
+  </div>
+  <div class="submit-button-container">
+    <button mat-button type="submit" class="continue-button">Continue</button>
+  </div>
+</form>

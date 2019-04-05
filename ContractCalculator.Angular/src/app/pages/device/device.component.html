@@ -1,0 +1,22 @@
+<h1 class="page-title">What phone have you been offered?</h1>
+<form (submit)="onSubmit()"  class="flex-form">
+  <mat-button-toggle-group name="Brands" aria-label="Brands">
+    <mat-button-toggle *ngFor="let brand of brands">{{brand}}</mat-button-toggle>
+  </mat-button-toggle-group>
+  <div class="center-select-container">
+    <mat-form-field>
+      <mat-select [formControl]="modelControl" placeholder="Model" #modelSelect>
+        <mat-option>
+          <ngx-mat-select-search [formControl]="modelFilterControl" [placeholderLabel]="'Search'"
+            [noEntriesFoundLabel]="'No models found'"></ngx-mat-select-search>
+        </mat-option>
+        <mat-option *ngFor="let model of filteredModels$ | async" [value]="model">
+          {{model}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="submit-button-container">
+    <button mat-button type="submit" class="continue-button">Continue</button>
+  </div>
+</form>
